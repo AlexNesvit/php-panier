@@ -22,8 +22,7 @@ session_start() ;
          while($row = mysqli_fetch_assoc($req)){ 
         ?>
         <form action="" class="product">
-            <div class="image_product">
-                <img src="project_images/<?=$row['img']?>">
+            <div class="image_product" style="background-image: url('<?= $row['image'] ?>');">
             </div>
             <div class="content">
                 <h4 class="name"><?=$row['name']?></h4>

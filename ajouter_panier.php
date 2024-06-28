@@ -15,7 +15,7 @@
   if(isset($_GET['id'])){//si un id a été envoyé alors :
     $id = $_GET['id'] ;
     //verifier grace a l'id si le produit existe dans la base de  données
-    $produit = mysqli_query($con ,"SELECT * FROM products WHERE id = $id") ;
+    $produit = mysqli_query($con ,"SELECT * FROM goods WHERE id = $id") ;
     if(empty(mysqli_fetch_assoc($produit))){
         //si ce produit n'existe pas
         die("Ce produit n'existe pas");

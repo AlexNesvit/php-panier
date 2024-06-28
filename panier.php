@@ -43,7 +43,7 @@ if (isset($_GET['del'])) {
             } else {
                 // Получаем продукты из базы данных
                 $ids_list = implode(',', array_map('intval', $ids));
-                $products_query = "SELECT * FROM products WHERE id IN ($ids_list)";
+                $products_query = "SELECT * FROM goods WHERE id IN ($ids_list)";
                 $products_result = mysqli_query($con, $products_query);
 
                 // Обрабатываем каждую строку из результата
