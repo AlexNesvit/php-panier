@@ -50,10 +50,11 @@ if (isset($_GET['del'])) {
                 while ($product = mysqli_fetch_assoc($products_result)):
                     // Рассчитываем стоимость продукта и добавляем к общей сумме
                     $quantity = $_SESSION['panier'][$product['id']];
-                    $total += $product['price'] * $quantity;
+                    $total += floatval($product['price']) * intval($quantity);
+
                 ?>
                 <tr>
-                    <td><img src="project_images/<?=$product['img']?>" alt="Image de <?=$product['name']?>"></td>
+                    <td><img src="img/<?=$product['image']?>" alt="Image de <?=$product['name']?>"></td>
                     <td><?=$product['name']?></td>
                     <td><?=$product['price']?>€</td>
                     <td><?=$quantity // Количество?></td>
