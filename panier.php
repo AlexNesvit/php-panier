@@ -27,7 +27,7 @@ if (isset($_GET['del'])) {
     <section>
         <table>
             <tr>
-                <th></th>
+                <th>Image</th>
                 <th>Nom</th>
                 <th>Prix</th>
                 <th>Quantité</th>
@@ -39,7 +39,7 @@ if (isset($_GET['del'])) {
             $ids = array_keys($_SESSION['panier']);
 
             if (empty($ids)) {
-                echo "<tr><td colspan='5'>Votre panier est vide</td></tr>";
+                echo "<tr><td colspan='5' class='empty-cart-message'>" . _('Votre panier est vide') . "</td></tr>";
             } else {
                 // Получаем продукты из базы данных
                 $ids_list = implode(',', array_map('intval', $ids));
@@ -54,7 +54,7 @@ if (isset($_GET['del'])) {
 
                 ?>
                 <tr>
-                    <td><img src="img/<?=$product['image']?>" alt="Image de <?=$product['name']?>"></td>
+                    <td><img src="img/<?=$product['image']?>"></td>
                     <td><?=$product['name']?></td>
                     <td><?=$product['price']?>€</td>
                     <td><?=$quantity // Количество?></td>
