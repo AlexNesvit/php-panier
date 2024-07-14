@@ -18,12 +18,11 @@ session_start() ;
         //inclure la page de connexion
         include_once "con_dbb.php";
         //afficher la liste des produits
-         $req = mysqli_query($con, "SELECT * FROM products");
+         $req = mysqli_query($con, "SELECT * FROM goods");
          while($row = mysqli_fetch_assoc($req)){ 
         ?>
         <form action="" class="product">
-            <div class="image_product">
-                <img src="project_images/<?=$row['img']?>">
+            <div class="image_product" style="background-image: url('<?= $row['image'] ?>');">
             </div>
             <div class="content">
                 <h4 class="name"><?=$row['name']?></h4>
